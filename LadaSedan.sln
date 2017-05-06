@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.ConsoleUI", "LadaSedan.ConsoleUI\LadaSedan.ConsoleUI.csproj", "{C589A40B-C4CD-485D-B29C-D3CA41C93E81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.ConsoleUI", "LadaSedan.ConsoleUI\LadaSedan.ConsoleUI.csproj", "{F16A8F23-0FBD-4B28-BD88-8BD96355DCA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.Models", "LadaSedan.Models\LadaSedan.Models.csproj", "{0CAAB2BC-4447-4BB5-BDA7-BA88862848A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.Models", "LadaSedan.Models\LadaSedan.Models.csproj", "{C98B8A87-B0B7-48E7-8C46-B29D9ACF36CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.Tests", "LadaSedan.Tests\LadaSedan.Tests.csproj", "{CB22881C-6B28-48FC-AD96-312FB33DC644}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadaSedan.Tests", "LadaSedan.Tests\LadaSedan.Tests.csproj", "{9811F144-B18A-4DF5-B978-E7C588DFBF4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C589A40B-C4CD-485D-B29C-D3CA41C93E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C589A40B-C4CD-485D-B29C-D3CA41C93E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C589A40B-C4CD-485D-B29C-D3CA41C93E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C589A40B-C4CD-485D-B29C-D3CA41C93E81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CAAB2BC-4447-4BB5-BDA7-BA88862848A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CAAB2BC-4447-4BB5-BDA7-BA88862848A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CAAB2BC-4447-4BB5-BDA7-BA88862848A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CAAB2BC-4447-4BB5-BDA7-BA88862848A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB22881C-6B28-48FC-AD96-312FB33DC644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB22881C-6B28-48FC-AD96-312FB33DC644}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB22881C-6B28-48FC-AD96-312FB33DC644}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB22881C-6B28-48FC-AD96-312FB33DC644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16A8F23-0FBD-4B28-BD88-8BD96355DCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16A8F23-0FBD-4B28-BD88-8BD96355DCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16A8F23-0FBD-4B28-BD88-8BD96355DCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16A8F23-0FBD-4B28-BD88-8BD96355DCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98B8A87-B0B7-48E7-8C46-B29D9ACF36CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98B8A87-B0B7-48E7-8C46-B29D9ACF36CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98B8A87-B0B7-48E7-8C46-B29D9ACF36CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98B8A87-B0B7-48E7-8C46-B29D9ACF36CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9811F144-B18A-4DF5-B978-E7C588DFBF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9811F144-B18A-4DF5-B978-E7C588DFBF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9811F144-B18A-4DF5-B978-E7C588DFBF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9811F144-B18A-4DF5-B978-E7C588DFBF4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

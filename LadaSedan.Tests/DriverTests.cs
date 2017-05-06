@@ -54,17 +54,14 @@ namespace LadaSedan.Tests
         [TestMethod]
         public void OwnCarSetsDriversCar()
         {
-            var car = new Car();
+            var car = new Car("",'\0');
             driver.OwnCar(car);
             driver.Car.Should().Be(car, "OwnCar method should set driver's Car property to instance of Car passed to OwnCar function");
         }
         [TestMethod]
         public void OwnCarThrowsIfDriverDoesntHaveCategoryRequiredByCar()
         {
-            var car = new Car()
-            {
-                Category = 'B'
-            };
+            var car = new Car("", 'B');
             Action a = () => driver.OwnCar(car);
             a.ShouldThrow<InvalidOperationException>().WithMessage($"Driver {driver.Name} doesn't have category {car.Category} required by car!");
         }

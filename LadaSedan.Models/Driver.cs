@@ -15,10 +15,14 @@ namespace LadaSedan.Models
             this.Category = new HashSet<char>();
         }
 
-        public int Experience { get {
-                return (new DateTime(1, 1, 1) 
+        public int Experience
+        {
+            get
+            {
+                return (new DateTime(1, 1, 1)
                     + DateTime.Now.Subtract(LicenceDate)).Year - 1;
-            } }
+            }
+        }
 
         public HashSet<Char> Category { get; set; }
         public Car Car { get; private set; }
@@ -28,7 +32,8 @@ namespace LadaSedan.Models
             if (!Category.Contains(car.Category) && car.Category != '\0')
             {
                 throw new InvalidOperationException($"Driver {Name} doesn't have category {car.Category} required by car!");
-            } else { Car = car; }
+            }
+            else { Car = car; }
         }
     }
 }
