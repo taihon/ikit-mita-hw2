@@ -3,6 +3,7 @@ using LadaSedan.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace LadaSedan.Tests
@@ -30,7 +31,13 @@ namespace LadaSedan.Tests
         [TestMethod]
         public void CarsDefaultColorIsBlue()
         {
-            //car.Color.Should().Be(System.Drawing.Color)
+            car.Color.Should().Be(Color.Blue, "default Car.Color should be blue");
+        }
+        [TestMethod]
+        public void CarColorShouldBeChangeable()
+        {
+            car.Color = Color.Beige;
+            car.Color.Should().Be(Color.Beige, "Car.Color should be changeable");
         }
     }
 }
