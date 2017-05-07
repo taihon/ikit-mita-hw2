@@ -6,5 +6,6 @@ namespace LadaSedan.Models
 {
     public class CarPassport
     {
+        public Driver Owner { get; set; }
     }
 }

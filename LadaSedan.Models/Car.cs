@@ -23,5 +23,13 @@ namespace LadaSedan.Models
         public readonly CarPassport CarPassport;
 
         public Color Color { get; set; }
+        public string CarNumber { get; private set; }
+
+        public void ChangeOwner(Driver driver, string v)
+        {
+            CarNumber = v;
+            CarPassport.Owner = driver;
+            CarPassport.Owner.OwnCar(this);
+        }
     }
 }

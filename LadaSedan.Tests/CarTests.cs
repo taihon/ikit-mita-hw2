@@ -39,5 +39,29 @@ namespace LadaSedan.Tests
             car.Color = Color.Beige;
             car.Color.Should().Be(Color.Beige, "Car.Color should be changeable");
         }
+        [TestMethod]
+        public void CarChangeOwnerChangesCarNumber()
+        {
+            var driver = new Driver("Rajesh", DateTime.Today);
+            driver.Category.Add('B');
+            car.ChangeOwner(driver,"A001BC");
+            car.CarNumber.Should().Be("A001BC", "changing car's owner should change CarNumber");
+        }
+        [TestMethod]
+        public void CarChangeOwnerShouldChangeOwnerInPassport()
+        {
+            var driver = new Driver("Rajesh", DateTime.Today);
+            driver.Category.Add('B');
+            car.ChangeOwner(driver, "A001BC");
+            car.CarPassport.Owner.Should().Be(driver, "Car.ChangeOwner should change owner in Car.CarPassport");
+        }
+        [TestMethod]
+        public void CarChangeOwnerShouldChangeOwnersCar()
+        {
+            var driver = new Driver("Rajesh", DateTime.Today);
+            driver.Category.Add('B');
+            car.ChangeOwner(driver, "A001BC");
+            car.CarPassport.Owner.Car.Should().Be(car, "Car.ChangeOwner should change owner's car in Car.CarPassport");
+        }
     }
 }
