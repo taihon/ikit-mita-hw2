@@ -13,7 +13,7 @@ namespace LadaSedan.Models
         {
             Model = model;
             Category = category;
-            CarPassport = new CarPassport();
+            CarPassport = new CarPassport(this);
             Color = Color.Blue;
         }
 

@@ -58,6 +58,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarPassportTests.cs" />
     <Compile Include="CarTests.cs" />
     <Compile Include="DriverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
