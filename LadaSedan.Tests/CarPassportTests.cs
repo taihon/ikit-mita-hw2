@@ -15,7 +15,7 @@ namespace LadaSedan.Tests
         [TestMethod]
         public void CarPassportSetsCarProperlyOnCreation()
         {
-            var car = new Car("Ferrari", 'Z');
+            var car = new Car("Ferrari", DrivingLicenseCategory.F);
             var cpassport = new CarPassport(car);
             cpassport.Car.Should().Be(car, "CarPassport should set Car property via constructor");
         }

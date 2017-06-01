@@ -9,19 +9,19 @@ namespace LadaSedan.Tests
     [TestClass]
     public class DriverTests
     {
-        private Driver driver;
-        private DateTime licenseDate;
+        private Driver _driver;
+        private DateTime _licenseDate;
         [TestInitialize]
         public void TestInitialize()
         {
-            licenseDate = DateTime.Now.AddYears(-10);
-            driver = new Driver("Rajesh", licenseDate);
+            _licenseDate = DateTime.Now.AddYears(-10);
+            _driver = new Driver("Rajesh", _licenseDate);
         }
         [TestMethod]
         public void DriverConstructorCorrectlySetsProperties()
         {
-            driver.Name.Should().Be("Rajesh");
-            driver.LicenceDate.Should().Be(licenseDate);
+            _driver.Name.Should().Be("Rajesh");
+            _driver.LicenceDate.Should().Be(_licenseDate);
         }
         [TestMethod]
         public void ExperienceShouldBe2WhenLicenceDateIs2YearsAgo()
@@ -40,30 +40,32 @@ namespace LadaSedan.Tests
         [TestMethod]
         public void CategoryIsAddable()
         {
-            driver.Category.Add('B');
-            driver.Category.Should().Contain(c => c == 'B');
+            _driver.Category.Add(DrivingLicenseCategory.B);
+            _driver.Category.Should().Contain(c => c == DrivingLicenseCategory.B);
         }
 
         [TestMethod]
         public void CategoryIsNotAddedWhenAlreadyPresentInCategories()
         {
             var driver = new Driver("Rajesh", DateTime.Now.AddYears(-10));
-            driver.Category.Add('A');
+            driver.Category.Add(DrivingLicenseCategory.A);
+            driver.Category.Add(DrivingLicenseCategory.A);
             driver.Category.Should().HaveCount(1, "category should be added only once");
         }
         [TestMethod]
         public void OwnCarSetsDriversCar()
         {
-            var car = new Car("",'\0');
-            driver.OwnCar(car);
-            driver.Car.Should().Be(car, "OwnCar method should set driver's Car property to instance of Car passed to OwnCar function");
+            var car = new Car("",DrivingLicenseCategory.B);
+            _driver.Category.Add(DrivingLicenseCategory.B);
+            _driver.OwnCar(car);
+            _driver.Car.Should().Be(car, "OwnCar method should set driver's Car property to instance of Car passed to OwnCar function");
         }
         [TestMethod]
         public void OwnCarThrowsIfDriverDoesntHaveCategoryRequiredByCar()
         {
-            var car = new Car("", 'B');
-            Action a = () => driver.OwnCar(car);
-            a.ShouldThrow<InvalidOperationException>().WithMessage($"Driver {driver.Name} doesn't have category {car.Category} required by car!");
+            var car = new Car("", DrivingLicenseCategory.B);
+            Action a = () => _driver.OwnCar(car);
+            a.ShouldThrow<InvalidOperationException>().WithMessage($"Driver {_driver.Name} doesn't have category {car.Category} required by car!");
         }
     }
 }

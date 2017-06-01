@@ -9,7 +9,7 @@ namespace LadaSedan.Models
 {
     public class Car
     {
-        public Car(string model, char category)
+        public Car(string model, DrivingLicenseCategory category)
         {
             Model = model;
             Category = category;
@@ -24,7 +24,7 @@ namespace LadaSedan.Models
         public Color Color { get; set; }
         public string CarNumber { get; private set; }
 
-        public char Category { get; }
+        public DrivingLicenseCategory Category { get; }
 
         public void ChangeOwner(Driver driver, string v)
         {

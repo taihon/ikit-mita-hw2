@@ -15,13 +15,13 @@ namespace LadaSedan.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            car = new Car(model: "Volga", category: 'B');
+            car = new Car(model: "Volga", category: DrivingLicenseCategory.B);
         }
         [TestMethod]
         public void CarConstructorSetsPropertiesCorrectly()
         {
             car.Model.Should().Be("Volga");
-            car.Category.Should().Be('B');
+            car.Category.Should().Be(DrivingLicenseCategory.B);
         }
         [TestMethod]
         public void CarsPassportCreatedOnConstruction()
@@ -43,7 +43,7 @@ namespace LadaSedan.Tests
         public void CarChangeOwnerChangesCarNumber()
         {
             var driver = new Driver("Rajesh", DateTime.Today);
-            driver.Category.Add('B');
+            driver.Category.Add(DrivingLicenseCategory.B);
             car.ChangeOwner(driver,"A001BC");
             car.CarNumber.Should().Be("A001BC", "changing car's owner should change CarNumber");
         }
@@ -51,7 +51,7 @@ namespace LadaSedan.Tests
         public void CarChangeOwnerShouldChangeOwnerInPassport()
         {
             var driver = new Driver("Rajesh", DateTime.Today);
-            driver.Category.Add('B');
+            driver.Category.Add(DrivingLicenseCategory.B);
             car.ChangeOwner(driver, "A001BC");
             car.CarPassport.Owner.Should().Be(driver, "Car.ChangeOwner should change owner in Car.CarPassport");
         }
@@ -59,7 +59,7 @@ namespace LadaSedan.Tests
         public void CarChangeOwnerShouldChangeOwnersCar()
         {
             var driver = new Driver("Rajesh", DateTime.Today);
-            driver.Category.Add('B');
+            driver.Category.Add(DrivingLicenseCategory.B);
             car.ChangeOwner(driver, "A001BC");
             car.CarPassport.Owner.Car.Should().Be(car, "Car.ChangeOwner should change owner's car in Car.CarPassport");
         }
@@ -68,7 +68,7 @@ namespace LadaSedan.Tests
         public void CarChangeOwnerShouldntChangeCarPassportOrNumber()
         {
             var driver = new Driver("Rajesh", DateTime.Today);
-            driver.Category.Add('D');
+            driver.Category.Add(DrivingLicenseCategory.D);
             try
             {
                 car.ChangeOwner(driver, "A001BC");
