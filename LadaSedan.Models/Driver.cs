@@ -19,8 +19,9 @@ namespace LadaSedan.Models
         {
             get
             {
-                return (new DateTime(1, 1, 1)
-                    + DateTime.Now.Subtract(LicenceDate)).Year - 1;
+                int t = (new DateTime(1, 1, 1)
+                         + DateTime.Now.Subtract(LicenceDate)).Year - 1;
+                return DateTime.Now.AddYears(-t) < LicenceDate ? t - 1 : t;
             }
         }
 

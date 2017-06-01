@@ -67,5 +67,16 @@ namespace LadaSedan.Tests
             Action a = () => _driver.OwnCar(car);
             a.ShouldThrow<InvalidOperationException>().WithMessage($"Driver {_driver.Name} doesn't have category {car.Category} required by car!");
         }
+        [TestMethod]
+        public void ExperienceCalculatesCorrectlyWhenDatesAreSlightlyAway()
+        {
+            var ld = new DateTime(2015,01,03);
+            var now = new DateTime(2017,01,02);
+            var t = (new DateTime(1, 1, 1)
+                     + now.Subtract(ld)).Year - 1;
+            if (now.AddYears(-t) < ld)
+                t--;
+            t.Should().Be(1);
+        }
     }
 }
