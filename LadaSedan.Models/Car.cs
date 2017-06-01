@@ -11,6 +11,10 @@ namespace LadaSedan.Models
     {
         public Car(string model, DrivingLicenseCategory category)
         {
+            if (category == DrivingLicenseCategory.A)
+            {
+                throw new ArgumentOutOfRangeException("Category should be one of the following elements of DriverLicenseCategory enum: BCDEF");
+            }
             Model = model;
             Category = category;
             CarPassport = new CarPassport(this);
