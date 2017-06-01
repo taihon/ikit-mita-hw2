@@ -13,6 +13,6 @@ namespace LadaSedan.Models
         }
 
         public Driver Owner { get; set; }
-        public Car Car { get; set; }
+        public Car Car { get; }
     }
 }
