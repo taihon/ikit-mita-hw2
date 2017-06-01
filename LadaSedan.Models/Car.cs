@@ -17,13 +17,14 @@ namespace LadaSedan.Models
             Color = Color.Blue;
         }
 
-        public readonly char Category;
-        public readonly string Model;
+        public string Model { get; }
 
-        public readonly CarPassport CarPassport;
+        public CarPassport CarPassport { get; }
 
         public Color Color { get; set; }
         public string CarNumber { get; private set; }
+
+        public char Category { get; }
 
         public void ChangeOwner(Driver driver, string v)
         {

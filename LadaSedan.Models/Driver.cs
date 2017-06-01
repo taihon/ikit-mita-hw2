@@ -5,8 +5,8 @@ namespace LadaSedan.Models
 {
     public class Driver
     {
-        public readonly string Name;
-        public readonly DateTime LicenceDate;
+        public string Name { get; }
+        public DateTime LicenceDate { get; }
 
         public Driver(string name, DateTime licenseDate)
         {
