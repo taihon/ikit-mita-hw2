@@ -27,9 +27,9 @@ namespace LadaSedan.Models
 
         public void ChangeOwner(Driver driver, string v)
         {
+            driver.OwnCar(this);
             CarNumber = v;
             CarPassport.Owner = driver;
-            CarPassport.Owner.OwnCar(this);
         }
     }
 }

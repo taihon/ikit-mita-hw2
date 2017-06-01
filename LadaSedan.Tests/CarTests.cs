@@ -63,5 +63,23 @@ namespace LadaSedan.Tests
             car.ChangeOwner(driver, "A001BC");
             car.CarPassport.Owner.Car.Should().Be(car, "Car.ChangeOwner should change owner's car in Car.CarPassport");
         }
+
+        [TestMethod]
+        public void CarChangeOwnerShouldntChangeCarPassportOrNumber()
+        {
+            var driver = new Driver("Rajesh", DateTime.Today);
+            driver.Category.Add('D');
+            try
+            {
+                car.ChangeOwner(driver, "A001BC");
+            }
+            catch
+            {
+            }
+            car.CarPassport.Owner.Should().Be(null,
+                "ChangeOwner shouldn't change CarPassport's owner given driver without needed category");
+            car.CarNumber.Should().Be(null,
+                "ChangeOwner shouldn't change Number given driver without needed category");
+        }
     }
 }
